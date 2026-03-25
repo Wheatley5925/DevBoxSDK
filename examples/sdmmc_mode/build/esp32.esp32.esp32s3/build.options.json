@@ -1,0 +1,9 @@
+{
+  "additionalFiles": "",
+  "compiler.optimization_flags": "-Os",
+  "customBuildProperties": "",
+  "fqbn": "esp32:esp32:esp32s3:USBMode=hwcdc,CDCOnBoot=cdc,UploadMode=default,JTAGAdapter=builtin",
+  "hardwareFolders": "/home/dan/.arduino15/packages/esp32/hardware/esp32/3.3.6,/home/dan/.arduino15/packages/esp32/hardware/esp32/3.3.6",
+  "otherLibrariesFolders": "/home/dan/Arduino/libraries",
+  "sketchLocation": "/home/dan/dev/sdmmc_mode"
+}
