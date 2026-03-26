@@ -1,3 +1,6 @@
+
+// CURRENT VERSION IS NOT STABLE DUE TO SD CARD READ MAX SPEED
+
 #include "av_player.h"
 #include "display.h"
 #include "audio_play.h"

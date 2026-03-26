@@ -1,3 +1,6 @@
+
+// CURRENT VERSION IS NOT STABLE DUE TO SD CARD READ MAX SPEED
+
 #pragma once
 #include <stdint.h>
 #include <stdbool.h>

@@ -237,10 +237,6 @@ case U8X8_MSG_BYTE_SEND: {
 
 gpio_set_level((gpio_num_t)WR, 0);
         gpio_set_level((gpio_num_t)WR, 1);
-
-    //if (WR < 32) GPIO.out_w1ts = (1UL << WR);
-    //else         GPIO.out1_w1ts.val = (1UL << (WR - 32));
-
   }
   break;
 }
@@ -287,61 +283,31 @@ uint8_t u8x8_d_ssd1363_custom_callback(u8x8_t *u8x8, uint8_t msg, uint8_t arg_in
       return r;
     }
 
-case U8X8_MSG_DISPLAY_INIT:
-  u8x8->gpio_and_delay_cb(u8x8, U8X8_MSG_GPIO_AND_DELAY_INIT, 0, NULL);
-  u8x8->byte_cb(u8x8, U8X8_MSG_BYTE_INIT, 0, NULL);
-
-  // Let panel power rails settle after cold boot
-  delay(120);
-
-  // Strong hardware reset
-  u8x8->gpio_and_delay_cb(u8x8, U8X8_MSG_GPIO_RESET, 0, NULL);
-  delay(50);
-  u8x8->gpio_and_delay_cb(u8x8, U8X8_MSG_GPIO_RESET, 1, NULL);
-  delay(120);
-
-  g_ssd1363_safe_init = true;
-  u8x8_cad_SendSequence(u8x8, u8x8_d_ssd1363_256x128_4bit_init_seq);
-  g_ssd1363_safe_init = false;
-
-  // Optional final state commands, but keep them minimal
-  u8x8_cad_StartTransfer(u8x8);
-  u8x8_cad_SendCmd(u8x8, 0xA4); // display from RAM
-  u8x8_cad_SendCmd(u8x8, 0xA6); // normal display
-  u8x8_cad_EndTransfer(u8x8);
-
-  break;
-/*
     case U8X8_MSG_DISPLAY_INIT:
       u8x8->gpio_and_delay_cb(u8x8, U8X8_MSG_GPIO_AND_DELAY_INIT, 0, NULL);
-      u8x8->byte_cb(u8x8, U8X8_MSG_BYTE_INIT, 0, NULL);   // <-- REQUIRED
+      u8x8->byte_cb(u8x8, U8X8_MSG_BYTE_INIT, 0, NULL);
 
-      // optional but good: perform a clean reset pulse
+      // Let panel power rails settle after cold boot
+      delay(120);
+
+      // Strong hardware reset
       u8x8->gpio_and_delay_cb(u8x8, U8X8_MSG_GPIO_RESET, 0, NULL);
       delay(50);
       u8x8->gpio_and_delay_cb(u8x8, U8X8_MSG_GPIO_RESET, 1, NULL);
-      delay(50);
+      delay(120);
 
-      u8x8_cad_SendSequence(u8x8, u8x8_d_ssd1363_256x128_4bit_init_seq);      
-      //u8x8_cad_StartTransfer(u8x8);
-      //u8x8_cad_SendCmd(u8x8, 0xAF); // Display ON
-      //u8x8_cad_SendCmd(u8x8, 0xA4); // display from RAM
-      //u8x8_cad_SendCmd(u8x8, 0xA6); // Normal display
-      //u8x8_cad_EndTransfer(u8x8);
-      
+      g_ssd1363_safe_init = true;
+      u8x8_cad_SendSequence(u8x8, u8x8_d_ssd1363_256x128_4bit_init_seq);
+      g_ssd1363_safe_init = false;
+
+      // Optional final state commands, but keep them minimal
       u8x8_cad_StartTransfer(u8x8);
-u8x8_cad_SendCmd(u8x8, 0xAF); // Display ON
-u8x8_cad_SendCmd(u8x8, 0xA5); // Entire display ON — stabilizes oscillator
-u8x8_cad_EndTransfer(u8x8);
+      u8x8_cad_SendCmd(u8x8, 0xA4); // display from RAM
+      u8x8_cad_SendCmd(u8x8, 0xA6); // normal display
+      u8x8_cad_EndTransfer(u8x8);
 
-delay(800);  // let controller stabilize while actively driving pixels
-
-u8x8_cad_StartTransfer(u8x8);
-u8x8_cad_SendCmd(u8x8, 0xA4); // display from RAM
-u8x8_cad_SendCmd(u8x8, 0xA6); // Normal display
-u8x8_cad_EndTransfer(u8x8);
       break;
-*/
+
     case U8X8_MSG_DISPLAY_DRAW_TILE: {
       u8x8_tile_t *tile = (u8x8_tile_t *)arg_ptr;
       const uint8_t x = tile->x_pos;   // tile x (8px units)

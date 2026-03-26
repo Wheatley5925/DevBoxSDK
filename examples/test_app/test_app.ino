@@ -23,34 +23,37 @@ void returnToOS() {
 }
 
 void setup() {
-  Serial.begin(115200);
-  Serial.println("=== TestApp started ===");
+    Serial.begin(115200);
+    Serial.println("=== TestApp started ===");
 
-  Serial.println("initSD...");
-  initSD();
-  Serial.println("initSD OK");
+    Serial.println("initSD...");
+    initSD();
+    Serial.println("initSD OK");
 
-  Serial.println("initAudio...");
-  initAudio();
-  Serial.println("initAudio OK");
+    Serial.println("initAudio...");
+    initAudio();
+    Serial.println("initAudio OK");
 
-  Serial.println("initDisplay...");
-  bool ok = initDisplay();
-  Serial.printf("initDisplay OK=%d\n", ok);
+    Serial.println("initDisplay...");
+    bool ok = initDisplay();
+    Serial.printf("initDisplay OK=%d\n", ok);
 
-  Serial.println("initButtons...");
-  initButtons();
-  Serial.println("initButtons OK");
-  Serial.println("Initiated");
-  clearGray(0);
+    Serial.println("initButtons...");
+    initButtons();
+    Serial.println("initButtons OK");
+    Serial.println("Initiated");
+    clearGray(0);
 
-  uint32_t t0 = micros();
-  drawGrayBitmap(0, 0, picture_4bpp, picture_w, picture_h);
-  uint32_t dt = micros() - t0;
-  Serial.printf("sendToDisplay: %u us, %.1f FPS\n", dt, 1e6f / dt);
+    // Sample screen data transfer speed test
+    uint32_t t0 = micros();
+    drawGrayBitmap(0, 0, picture_4bpp, picture_w, picture_h);
+    uint32_t dt = micros() - t0;
+    Serial.printf("sendToDisplay: %u us, %.1f FPS\n", dt, 1e6f / dt);
 }
 
 void loop() {
+    // SELECT + START to return to the previous OTA partition
+    // (default: DevBox_OS app)
     if (buttonPressed(8) && buttonPressed(9)) {
         clearScreen();
         drawText(0, 10, "Exiting", 8);    

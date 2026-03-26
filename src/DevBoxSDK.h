@@ -6,4 +6,3 @@
 #include "display.h"
 #include "av_player.h"
 #include "sd.h"
-#include "soft_reboot.h"
