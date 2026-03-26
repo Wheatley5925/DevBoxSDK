@@ -91,7 +91,7 @@ void app_menu () {
     }
 
     // A → run the selected app
-    if (buttonPressed(4)) {
+    if (buttonPressed(3)) {
       const char* name = filenames[selected].c_str();
       std::string full = "/sdcard/apps/" + std::string(name);
 
@@ -100,6 +100,7 @@ void app_menu () {
         run_binary_app(full.c_str());
         // the function will do esp_restart if successful
       break;
+      }
     }
   }
 }
