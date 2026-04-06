@@ -8,8 +8,6 @@
 #include "esp_partition.h"
 #include "esp_system.h"
 
-sdmmc_card_t* g_sdcard = nullptr;   // реальное определение глобальной переменной
-
 USBMSC msc;
 
 static const uint32_t SECTOR_SIZE = 512;

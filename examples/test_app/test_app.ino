@@ -4,8 +4,6 @@
 #include "esp_system.h"
 #include "picture.h"
 
-sdmmc_card_t* g_sdcard = nullptr;
-
 void returnToOS() {
     const esp_partition_t* next = esp_ota_get_next_update_partition(nullptr);
     if (!next) {

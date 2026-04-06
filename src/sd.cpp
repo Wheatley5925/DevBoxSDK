@@ -1,5 +1,7 @@
 #include "sd.h"
 
+sdmmc_card_t* g_sdcard = nullptr;
+
 bool initSD() {
   sdmmc_host_t host = SDMMC_HOST_DEFAULT();
   host.flags = SDMMC_HOST_FLAG_1BIT;
