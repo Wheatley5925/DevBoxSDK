@@ -17,7 +17,8 @@ inline constexpr int PIN_LCD_CS  = 9;
 inline constexpr int PIN_LCD_RST = 46;
 
 // -- AUDIO PINS --
-
+//
+inline constexpr int PIN_AUD_POT  = 17;
 inline constexpr int PIN_AUD_BCK  = 2;
 inline constexpr int PIN_AUD_WS   = 1;
 inline constexpr int PIN_AUD_DOUT = 43;
@@ -30,7 +31,7 @@ inline constexpr int PIN_INPUT_X     = 6;
 inline constexpr int PIN_INPUT_Y     = 7;
 inline constexpr int PIN_INPUT_UP    = 15;
 inline constexpr int PIN_INPUT_DOWN  = 16;
-inline constexpr int PIN_INPUT_LEFT  = 17;
+inline constexpr int PIN_INPUT_LEFT  = 44;
 inline constexpr int PIN_INPUT_RIGHT = 18;
 inline constexpr int PIN_INPUT_SEL   = 8;
 inline constexpr int PIN_INPUT_START = 3;

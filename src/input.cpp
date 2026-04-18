@@ -56,3 +56,10 @@ bool buttonPressed(int index) {
   button.last_state = reading;
   return pressed;
 }
+
+bool buttonRaw(int index) {
+  if (index < 0 || index >= NUM_BUTTONS) return false;
+  Button &button = buttons[index];
+
+  return digitalRead(button.pin) == HIGH ? true : false;
+}
