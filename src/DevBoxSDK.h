@@ -1,4 +1,10 @@
 #pragma once
+#include "DevBoxTarget.h"
+#include "DevBoxClock.h"
+#include "DevBoxQueue.h"
+#include "DevBoxTask.h"
+#include "DevBoxSystem.h"
+#include "DevBoxDebug.h"
 #include "ConsolePins.h"
 #include "input.h"
 #include "audio.h"

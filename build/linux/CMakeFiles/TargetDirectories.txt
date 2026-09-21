@@ -1,0 +1,6 @@
+/home/dan/Arduino/libraries/DevBoxSDK/build/linux/CMakeFiles/devbox_u8g2.dir
+/home/dan/Arduino/libraries/DevBoxSDK/build/linux/CMakeFiles/devbox_linux_gradient.dir
+/home/dan/Arduino/libraries/DevBoxSDK/build/linux/CMakeFiles/devbox_linux_audio_demo.dir
+/home/dan/Arduino/libraries/DevBoxSDK/build/linux/CMakeFiles/devbox_linux_sd_demo.dir
+/home/dan/Arduino/libraries/DevBoxSDK/build/linux/CMakeFiles/edit_cache.dir
+/home/dan/Arduino/libraries/DevBoxSDK/build/linux/CMakeFiles/rebuild_cache.dir

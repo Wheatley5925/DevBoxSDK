@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/devbox_linux_sd_demo.dir/examples/linux_sd/main.cpp.o CMakeFiles/devbox_linux_sd_demo.dir/src/backends/linux/sd.cpp.o -o devbox_linux_sd_demo 

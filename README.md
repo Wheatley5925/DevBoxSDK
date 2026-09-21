@@ -43,9 +43,21 @@ This SDK is designed for the DevBox handheld hardware:
 
 ## Repository structure
 
-- `src/` — library source code
+- `src/*.h` — public SDK headers and target selection
+- `src/backends/esp32/` — current ESP32 implementation
+- `src/backends/linux/` — placeholder for the SDL2 implementation
 - `examples/` — sample Arduino sketches
 - `library.properties` — Arduino library metadata
+
+## Target selection
+
+`DevBoxTarget.h` defines the available target names. Builds that do not set
+`DEVBOX_TARGET` use `DEVBOX_TARGET_ESP32`, preserving the current Arduino build.
+The ESP32 backend files are compiled only when that target is selected.
+
+The Linux backend currently supports display output, keyboard input, and a
+folder-backed SD path resolver; see `src/backends/linux/README.md` for demos.
+Linux audio is still missing. The ESP32 + RP2354 backend is not implemented yet.
 
 ## Installation
 
@@ -124,4 +136,3 @@ This project is under active development and may change as the hardware and soft
 ## Contributing
 
 Contributions, bug reports, and suggestions are welcome.
-
