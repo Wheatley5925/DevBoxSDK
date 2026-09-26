@@ -1,6 +1,6 @@
 #include "DevBoxTarget.h"
 
-#if DEVBOX_TARGET == DEVBOX_TARGET_LINUX
+#if DEVBOX_TARGET_IS_DESKTOP
 
 #include "DevBoxSystem.h"
 #include "linux_ui.h"
@@ -35,4 +35,4 @@ bool devboxApplicationPaused() {
   return devboxLinuxControlsOpen();
 }
 
-#endif // DEVBOX_TARGET_LINUX
+#endif // DEVBOX_TARGET_IS_DESKTOP

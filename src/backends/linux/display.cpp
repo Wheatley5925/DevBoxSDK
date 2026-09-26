@@ -1,6 +1,6 @@
 #include "DevBoxTarget.h"
 
-#if DEVBOX_TARGET == DEVBOX_TARGET_LINUX
+#if DEVBOX_TARGET_IS_DESKTOP
 
 #include "display.h"
 #include "audio.h"
@@ -572,4 +572,4 @@ void sendToDisplay() {
   SDL_RenderPresent(renderer);
 }
 
-#endif // DEVBOX_TARGET_LINUX
+#endif // DEVBOX_TARGET_IS_DESKTOP

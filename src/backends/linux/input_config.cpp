@@ -1,6 +1,6 @@
 #include "DevBoxTarget.h"
 
-#if DEVBOX_TARGET == DEVBOX_TARGET_LINUX
+#if DEVBOX_TARGET_IS_DESKTOP
 
 #include "input_config.h"
 #include "input_keys.h"
@@ -217,4 +217,4 @@ bool saveConfiguration(bool forThisGameOnly, std::string& error) {
 }
 }
 
-#endif // DEVBOX_TARGET_LINUX
+#endif // DEVBOX_TARGET_IS_DESKTOP

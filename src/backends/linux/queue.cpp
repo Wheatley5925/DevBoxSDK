@@ -1,6 +1,6 @@
 #include "DevBoxTarget.h"
 
-#if DEVBOX_TARGET == DEVBOX_TARGET_LINUX
+#if DEVBOX_TARGET_IS_DESKTOP
 
 #include "DevBoxQueue.h"
 #include <chrono>
@@ -80,4 +80,4 @@ bool devboxQueueReceive(DevBoxQueue* queue, void* item, uint32_t timeoutMs) {
   return true;
 }
 
-#endif // DEVBOX_TARGET_LINUX
+#endif // DEVBOX_TARGET_IS_DESKTOP

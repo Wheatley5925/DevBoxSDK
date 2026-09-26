@@ -1,6 +1,6 @@
 #include "DevBoxTarget.h"
 
-#if DEVBOX_TARGET == DEVBOX_TARGET_LINUX
+#if DEVBOX_TARGET_IS_DESKTOP
 
 #include "audio.h"
 #include <SDL2/SDL.h>
@@ -88,4 +88,4 @@ size_t writeAudio(const void* data, size_t byteCount) {
   return written;
 }
 
-#endif // DEVBOX_TARGET_LINUX
+#endif // DEVBOX_TARGET_IS_DESKTOP

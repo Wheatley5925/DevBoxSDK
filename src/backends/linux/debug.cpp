@@ -1,6 +1,6 @@
 #include "DevBoxTarget.h"
 
-#if DEVBOX_TARGET == DEVBOX_TARGET_LINUX
+#if DEVBOX_TARGET_IS_DESKTOP
 
 #include "DevBoxDebug.h"
 #include <cstdarg>
@@ -23,4 +23,4 @@ void devboxPrintf(const char* format, ...) {
   std::fflush(stdout);
 }
 
-#endif // DEVBOX_TARGET_LINUX
+#endif // DEVBOX_TARGET_IS_DESKTOP

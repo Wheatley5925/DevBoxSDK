@@ -1,6 +1,6 @@
 #include "DevBoxTarget.h"
 
-#if DEVBOX_TARGET == DEVBOX_TARGET_LINUX
+#if DEVBOX_TARGET_IS_DESKTOP
 
 #include "input.h"
 #include <SDL2/SDL.h>
@@ -81,4 +81,4 @@ bool buttonPressed(int index) {
   return pressEdge(buttons[index], buttonRaw(index), Clock::now());
 }
 
-#endif // DEVBOX_TARGET_LINUX
+#endif // DEVBOX_TARGET_IS_DESKTOP

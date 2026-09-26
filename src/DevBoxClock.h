@@ -3,7 +3,7 @@
 #include <stdint.h>
 #include "DevBoxTarget.h"
 
-#if DEVBOX_TARGET == DEVBOX_TARGET_LINUX
+#if DEVBOX_TARGET_IS_DESKTOP
 #include <chrono>
 #include <thread>
 
